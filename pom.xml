@@ -1,68 +1,84 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- This specifies the Maven POM version and the XML schema location for the POM structure -->
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Group ID represents the group to which this project belongs -->
     <groupId>org.catchylabs</groupId>
+
+    <!-- Artifact ID is the name of the project and artifact to be generated -->
     <artifactId>CatchyLabsAutomation</artifactId>
+
+    <!-- Version defines the version of the artifact -->
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <!-- Selenium Java Dependency for browser automation -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.28.1</version>
         </dependency>
+
+        <!-- JUnit 4 Dependency for testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JUnit Jupiter API (JUnit 5) Dependency for testing -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Gauge Java Dependency for behavior-driven development (BDD) testing -->
         <dependency>
             <groupId>com.thoughtworks.gauge</groupId>
             <artifactId>gauge-java</artifactId>
             <version>[0.10.3,)</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- AssertJ Dependency for fluent assertions in testing -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.25.3</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>5.3.0</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
+        <!-- Build configurations -->
         <plugins>
+            <!-- Maven Compiler Plugin to compile Java sources -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
+                    <!-- Source and Target Java version for compilation -->
                     <source>11</source>
                     <target>11</target>
                 </configuration>
             </plugin>
+
+            <!-- Gauge Maven Plugin for running Gauge specs -->
             <plugin>
                 <groupId>com.thoughtworks.gauge.maven</groupId>
                 <artifactId>gauge-maven-plugin</artifactId>
                 <version>1.6.3</version>
                 <executions>
                     <execution>
+                        <!-- Define the phase in which the Gauge tests are executed -->
                         <phase>test</phase>
                         <configuration>
+                            <!-- Specify the directory for Gauge specs -->
                             <specsDir>specs</specsDir>
                         </configuration>
                         <goals>
