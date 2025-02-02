@@ -1,4 +1,4 @@
-# Open Checing Acoount
+# Open Checking Acoount
 * Launch the browser "chrome"
 
 ## Scenario: Launch Browser and Verify Login Page Title
@@ -12,13 +12,13 @@
 * Send text to the element with locator "//input[@placeholder='Password']", text: "Catchy123"
 * Wait for 1 second before performing action
 * Click the element with locator "//div[@class='css-146c3p1 r-jwli3a r-1b43r93']" and verify element with locator "//div[@class='css-146c3p1 r-jwli3a r-1b43r93']" is displayed
+* Wait for 3 second before upload page
 
 ## Scenario: Verify Navigation After Successful Login
 * Click the element with locator "//div[@class='css-146c3p1 r-jwli3a r-1b43r93']" and verify element with locator "//div[@class='css-146c3p1 r-jwli3a r-1b43r93']" is displayed
 * Wait for 3 second before upload page
 
 ## Scenario: Contiune for money transfer page
-
 * Verify the element with locator "//div[contains(text(),'You don't have any account yet!')]" is displayed
 * Click the element with locator "//div[contains(text(),'Create an account')]" and verify element with locator "//div[contains(text(),'Create an account')]" is displayed
 * Wait for 3 second before upload page
@@ -35,6 +35,8 @@
 * Click the element with locator "//div[@class='css-146c3p1 r-jwli3a r-1b43r93'][normalize-space()='Create']" and verify element with locator "//div[@class='css-146c3p1 r-jwli3a r-1b43r93'][normalize-space()='Create']" is displayed
 * Wait for 3 second before upload page
 * Verify the element with locator "//div[normalize-space()='My account']" is displayed
+* Verify the element with locator "//div[text()='CHECKING']" is displayed
+* Wait for 3 second before upload page
 
 ## Close Browser
 * Wait for 1 second before performing action

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 
 public class Methods extends BaseTest {
 
-
+    // Launch the browser and perform setup
     public void launchBrowser(String browser) {
         try {
             setup(browser);
@@ -21,6 +21,7 @@ public class Methods extends BaseTest {
         }
     }
 
+    // Close the browser and perform teardown
     public void closeBrowser() {
         try {
             teardown();
@@ -31,26 +32,29 @@ public class Methods extends BaseTest {
         }
     }
 
+    // Wait for a specific period before performing the next action (1 second)
     public void waitBeforeAction() {
         try {
-            Thread.sleep(1000); // 1 saniye bekleme
+            Thread.sleep(1000); // Wait for 1 second
             Logger.info("Waited for 1 second before the action.");
         } catch (InterruptedException e) {
             Logger.error("Error during wait: " + e.getMessage());
-            Thread.currentThread().interrupt(); // Thread'in durumunu düzeltmek için interrupt çağrılır
+            Thread.currentThread().interrupt(); // Interrupt call to correct the thread's state
         }
     }
 
+    // Wait for a specific period before uploading (3 seconds)
     public void waitBeforeUpload() {
         try {
-            Thread.sleep(3000); // 1 saniye bekleme
-            Logger.info("Waited for 1 second before the action.");
+            Thread.sleep(3000); // Wait for 3 seconds
+            Logger.info("Waited for 3 seconds before the upload.");
         } catch (InterruptedException e) {
             Logger.error("Error during wait: " + e.getMessage());
-            Thread.currentThread().interrupt(); // Thread'in durumunu düzeltmek için interrupt çağrılır
+            Thread.currentThread().interrupt(); // Interrupt call to correct the thread's state
         }
     }
 
+    // Verify if the page title contains the expected text
     public void verifyTitle(String title) {
         try {
             String pageTitle = driver.getTitle();
@@ -111,7 +115,7 @@ public class Methods extends BaseTest {
         }
     }
 
-    // Combined method: Click and verify element, with visibility checks
+    // Combined method: Click an element and verify if another element is displayed
     public void clickAndVerifyElement(By clickLocator, By verifyLocator) {
         try {
             clickElement(clickLocator);
@@ -123,7 +127,7 @@ public class Methods extends BaseTest {
         }
     }
 
-    // Combined method: Send text and verify, with visibility checks
+    // Combined method: Send text to an element and verify the entered text
     public void sendTextAndVerify(By locator, String text) {
         try {
             sendText(locator, text);
@@ -136,12 +140,13 @@ public class Methods extends BaseTest {
         }
     }
 
+    // Select an option by its visible text
     public void selectOptionByText(By locator, String optionText) {
         try {
-            waitBeforeAction(); // Bekleme
-            WebElement selectElement = findElement(locator); // Select elementini buluyoruz
-            Select select = new Select(selectElement); // Select sınıfı ile işleme başlıyoruz
-            select.selectByVisibleText(optionText); // Görünür metne göre seçimi yapıyoruz
+            waitBeforeAction(); // Wait
+            WebElement selectElement = findElement(locator); // Find the select element
+            Select select = new Select(selectElement); // Start working with the Select class
+            select.selectByVisibleText(optionText); // Select by visible text
             Logger.info("Option with text '" + optionText + "' selected for element: " + locator);
         } catch (Exception e) {
             Logger.error("Error selecting option by text for element " + locator + ": " + e.getMessage());
@@ -149,13 +154,13 @@ public class Methods extends BaseTest {
         }
     }
 
-    // Select element içindeki option'u index ile seçme
+    // Select option by index from the select element
     public void selectOptionByIndex(By locator, int index) {
         try {
-            waitBeforeAction(); // Bekleme
-            WebElement selectElement = findElement(locator); // Select elementini buluyoruz
-            Select select = new Select(selectElement); // Select sınıfı ile işleme başlıyoruz
-            select.selectByIndex(index); // Index'e göre seçimi yapıyoruz
+            waitBeforeAction(); // Wait
+            WebElement selectElement = findElement(locator); // Find the select element
+            Select select = new Select(selectElement); // Start working with the Select class
+            select.selectByIndex(index); // Select by index
             Logger.info("Option with index '" + index + "' selected for element: " + locator);
         } catch (Exception e) {
             Logger.error("Error selecting option by index for element " + locator + ": " + e.getMessage());
@@ -163,13 +168,13 @@ public class Methods extends BaseTest {
         }
     }
 
-    // Select element içindeki option'u value ile seçme
+    // Select option by value from the select element
     public void selectOptionByValue(By locator, String value) {
         try {
-            waitBeforeAction(); // Bekleme
-            WebElement selectElement = findElement(locator); // Select elementini buluyoruz
-            Select select = new Select(selectElement); // Select sınıfı ile işleme başlıyoruz
-            select.selectByValue(value); // Value'ya göre seçimi yapıyoruz
+            waitBeforeAction(); // Wait
+            WebElement selectElement = findElement(locator); // Find the select element
+            Select select = new Select(selectElement); // Start working with the Select class
+            select.selectByValue(value); // Select by value
             Logger.info("Option with value '" + value + "' selected for element: " + locator);
         } catch (Exception e) {
             Logger.error("Error selecting option by value for element " + locator + ": " + e.getMessage());
@@ -177,6 +182,3 @@ public class Methods extends BaseTest {
         }
     }
 }
-
-
-

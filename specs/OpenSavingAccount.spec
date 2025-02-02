@@ -24,7 +24,6 @@
 * Wait for 3 second before upload page
 
 ## Scenario: Create account form
-* Wait for 3 second before upload page
 * Verify the element with locator "//div[contains(text(),'Create account')]" is displayed
 * Wait for 1 second before performing action
 * Select option by value "SAVING" from dropdown with locator "//div[@class='css-175oi2r r-1777fci']//select" and wait before action
@@ -35,6 +34,8 @@
 * Click the element with locator "//div[@class='css-146c3p1 r-jwli3a r-1b43r93'][normalize-space()='Create']" and verify element with locator "//div[@class='css-146c3p1 r-jwli3a r-1b43r93'][normalize-space()='Create']" is displayed
 * Wait for 3 second before upload page
 * Verify the element with locator "//div[normalize-space()='My account']" is displayed
+* Verify the element with locator "//div[text()='CHECKING']" is displayed
+* Wait for 3 second before upload page
 
 ## Close Browser
 * Wait for 1 second before performing action
