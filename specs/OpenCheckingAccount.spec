@@ -27,7 +27,7 @@
 * Wait for 3 second before upload page
 * Verify the element with locator "//div[contains(text(),'Create account')]" is displayed
 * Wait for 1 second before performing action
-* Select option by value "SAVING" from dropdown with locator "//div[@class='css-175oi2r r-1777fci']//select" and wait before action
+* Select option by value "CHECKING" from dropdown with locator "//div[@class='css-175oi2r r-1777fci']//select" and wait before action
 * Wait for 1 second before performing action
 * Click the element with locator "//input[@class='css-11aywtz r-6taxm2 r-1eh6qqt r-z2wwpe r-rs99b7 r-h3s6tt r-1qhn6m8']" and verify element with locator "//input[@class='css-11aywtz r-6taxm2 r-1eh6qqt r-z2wwpe r-rs99b7 r-h3s6tt r-1qhn6m8']" is displayed
 * Send text to the element with locator "//input[@class='css-11aywtz r-6taxm2 r-1eh6qqt r-z2wwpe r-rs99b7 r-h3s6tt r-1qhn6m8']", text: "Test Account"
